@@ -1,0 +1,47 @@
+.menu {
+  width: 300px;
+  height: 1150px;
+  background: url(../images/user-bg.png) 0% 20%;
+}
+
+.user {
+  width: 300px;
+  height: 300px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  padding-top: 85px;
+  // margin-bottom: 57px;
+  &__photo {
+    // margin-bottom: 15px;
+  }
+  &__details {
+    // display: flex;
+    // flex-wrap: wrap;
+    width: 155px;
+  }
+  &__name {
+    // margin: 0;
+    color: $bg-grey-color;
+    // font-weight: 400;
+    font-size: 22px;
+  }
+  &__btn {
+    margin-left: 5px;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__settings {
+    transition: all 0.4s;
+    &:hover {
+      transform: rotate(45deg) scale(1.1);
+    }
+  }
+  &__title {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}

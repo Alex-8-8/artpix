@@ -1,0 +1,65 @@
+.navigation {
+  width: 300px;
+  &__item {
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 45px;
+      transform: translateY(-50%);
+      width: 17px;
+      height: 20px;
+      background-image: url(../images/shopping-bag.png);
+    }
+    &-active {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 45px;
+        transform: translateY(-50%);
+        width: 17px;
+        height: 20px;
+        background-image: url(../images/shopping-bag-dark.png);
+      }
+    }
+  }
+  &__link {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding-left: 75px;
+    line-height: 50px;
+    transition: color 0.4s;
+    &-active {
+      background-color: $bg-grey-color;
+      color: $bg-darkblue-color;
+      &:before {
+        content: "";
+        position: absolute;
+        top: -46px;
+        right: -2px;
+        width: 47px;
+        height: 47px;
+        background: url("../images/top-frame.svg");
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -44px;
+        right: -2px;
+        width: 45px;
+        height: 45px;
+        background: url("../images/bottom-frame.svg");
+      }
+    }
+    &:hover {
+      color: $text-grey-color;
+    }
+  }
+}

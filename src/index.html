@@ -1,13 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>ArtPix 3D</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/main.css">
-  </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    </head>
+    <body>
+      <!-- HEADER -->
+      <header class="d-flex align-items-center position-relative header">
+        <div class="header__logo d-flex align-items-center justify-content-center h-100 position-relative">
+          <a href="#" class="main-logo position-absolute">
+            <img
+              src="./images/logo.png"
+              alt="logo"
+              class="main-logo__img"
+            />
+          </a>
+        </div>
+        <div class="header__search ml-5">
+          <label class="header__label position-relative">
+            <input
+              type="text"
+              id="header-input"
+              placeholder="Type in to Search..."
+              class="header__input px-5 border-0"
+            />
+          </label>
+        </div>
+        <a class="header__icon ml-auto mr-5 position-relative">
+          <img
+            src="./images/notification.png"
+            alt="bell"
+            class="header__bell"
+          />
+        </a>
+      </header>
+      <!-- MAIN -->
+      <main class="d-flex">
+        <div class="menu">
+          <div class="user d-flex flex-column align-items-center">
+            <img
+              src="./images/user-photo.png"
+              alt="user-photo"
+              class="user__photo mb-3"
+            />
+            <div class="user__details d-flex flex-wrap">
+              <h4 class="user__name m-0">
+                John Ivanov
+              </h4>
+            <button class="user__btn border-0">
+              <img
+                src="./images/user-settings.png"
+                alt="settings"
+                class="user__settings"
+              />
+            </button>
+            <p class="user__title">photograher</p>
+            </div>
+          </div>
+          <!-- NAVIGATION -->
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item" data-item="nav-item">
+                <a
+                  href="#"
+                  class="navigation__link"
+                  data-link="nav-link"
+                >
+                  Place order
+                </a>
+              </li>
+              <li class="navigation__item navigation__item-active" data-item="nav-item">
+                <a
+                  href="#"
+                  class="navigation__link navigation__link-active"
+                  data-link="nav-link"
+                >
+                  Orders
+                </a>
+              </li>
+              <li class="navigation__item" data-item="nav-item">
+                <a href="#" class="navigation__link" data-link="link">
+                  Product demo
+                </a>
+              </li>
+              <li class="navigation__item" data-item="nav-item">
+                <a href="#" class="navigation__link" data-link="link">
+                  Packages
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- ORDERS -->
+        <div class="orders w-100">
+          <div class="orders__filters d-flex justify-content-between">
+            <div class="orders__buttons-box d-flex justify-content-between">
+              <button
+                type="button"
+                class="orders__button orders__button-active"
+                data-filter="all"
+              >
+              All
+            </button>
+              <button
+                type="button"
+                class="orders__button orders__button-progress"
+                data-filter="inprogress"
+              >
+                Work in progress
+              </button>
+              <button
+                type="button"
+                class="orders__button orders__button-ready"
+                data-filter="ready"
+              >
+                Ready
+              </button>
+              <button
+                type="button"
+                class="orders__button orders__button-downloaded"
+                data-filter="downloaded"
+              >
+                Downloaded
+              </button>
+            </div>
+            <div class="orders__select-box d-flex align-items-center position-relative">
+              <span class="orders__show mr-3 position-relative">Show</span>
+              <select class="orders__select h-100 border-0">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+          </div>
+
+          <ul class="order-item order-item-top">
+            <li class="order-item__images">
+              <div class="order-item__box">
+              </div>
+            </li>
+            <li class="order-item__number order-item__number-top">Product Name</li>
+            <li class="order-item__shape order-item__shape-top">Shape</li>
+            <li class="order-item__unit-price order-item__unit-price-top">
+              Unit Price
+            </li>
+            <li class="order-item__date order-item__date-top">Date</li>
+            <li class="order-item__subtotal order-item__subtotal-top">Subtotal</li>
+            <li class="order-item__comment order-item__comment-top">
+              Comment
+            </li>
+            <li class="order-item__status order-item__status-top">Status</li>
+            <li><button type="button" class="order-item__edit order-item__edit-top"></button></li>
+          </ul>
+
+          <ul class="order-item" data-stat="inprogress">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-inprogress">Work in progress</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+
+          <ul class="order-item" data-stat="inprogress">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-inprogress">Work in progress</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+
+          <ul class="order-item" data-stat="ready">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-ready">Ready</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+
+          <ul class="order-item" data-stat="ready">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-ready">Ready</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+
+          <ul class="order-item" data-stat="inprogress">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-inprogress">Work in progress</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+
+          <ul class="order-item" data-stat="inprogress">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-inprogress">Work in progress</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+
+          <ul class="order-item" data-stat="downloaded">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-downloaded">Downloaded</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+
+          <ul class="order-item" data-stat="downloaded">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-downloaded">Downloaded</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+
+          <ul class="order-item" data-stat="downloaded">
+            <li class="order-item__images">
+              <input type="checkbox" class="order-item__checkbox">
+              <div class="order-item__box">
+                <img
+                  src="./images/order-image1.png"
+                  alt="image-1"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image2.png"
+                  alt="image-2"
+                  class="order-item__photo"
+                />
+                <img
+                  src="./images/order-image3.png"
+                  alt="image-3"
+                  class="order-item__photo"
+                />
+              </div>
+              <span class="order-item__multiplier">x3</span>
+            </li>
+            <li class="order-item__number">Order#1160</li>
+            <li class="order-item__shape">Rectangle</li>
+            <li class="order-item__unit-price">
+              <p class="order-item__name">John Ivanov</p>
+              <p class="order-item__address">45 Grand Central Terminal, New York</p>
+            </li>
+            <li class="order-item__date">4/18/2018</li>
+            <li class="order-item__subtotal">250$</li>
+            <li class="order-item__comment">
+              <img src="./images/chat.png" alt="chat"/>
+            </li>
+            <li class="order-item__status order-item__status-downloaded">Downloaded</li>
+            <li>
+              <button type="button" class="order-item__edit"></button>
+            </li>
+          </ul>
+          <div class="orders__copyright">
+            Copyright &copy 2018 ArtPix3D. All rights reserved.
+          </div>
+        </div>
+      </main>
     <script type="text/javascript" src="scripts/main.js"></script>
-  </body>
+    </body>
 </html>

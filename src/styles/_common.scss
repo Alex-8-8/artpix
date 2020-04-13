@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $bg-darkblue-color;
+  font-family: "Open Sans", sans-serif;
+  color: $text-grey-color;
+  overflow-x: hidden;
+}
+
+a,
+button {
+  cursor: pointer;
+}

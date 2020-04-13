@@ -4,3 +4,15 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin btn-before($_bg-color) {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $_bg-color;
+}
