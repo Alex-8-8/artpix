@@ -255,3 +255,14 @@
     }
   }
 }
+
+@media (max-width: 1480px) {
+  .orders {
+    font-size: 12px;
+  }
+  .order-item__number-top {
+    &:after {
+      right: 5px;
+    }
+  }
+}
