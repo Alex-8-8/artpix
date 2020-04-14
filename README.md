@@ -1,2 +1,1 @@
-
-    - [DEMO LINK](https://Alex-8-8.github.io/artpix/)
+[DEMO LINK](https://Alex-8-8.github.io/artpix/)
